@@ -1,0 +1,96 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0A0A0A;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: transparent;
+    transition: 0.3s;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #9D00FF;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #9D00FF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #E100FF;
+}
+
+#hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 150px 20px;
+    margin-top: 50px;
+}
+
+.cta-button {
+    background: #9D00FF;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+}
+
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.service, .testimonial {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.service:hover, .testimonial:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+}
