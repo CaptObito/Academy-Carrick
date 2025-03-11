@@ -1,0 +1,13 @@
+.dark-mode {
+    background: #000000;
+    color: white;
+}
+
+.dark-mode header {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .button {
+    background: white;
+    color: #9400D3;
+}
