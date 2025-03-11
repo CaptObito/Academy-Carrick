@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Header Color Animation
     const header = document.querySelector('header');
     let colorIndex = 0;
-    const colors = ['#ff6a00', '#ee0979', '#ff0077', '#00bcd4', '#8e44ad'];
+    const colors = ['#8e44ad', '#2c3e50', '#ecf0f1'];
     setInterval(() => {
         header.style.background = colors[colorIndex];
         colorIndex = (colorIndex + 1) % colors.length;
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     backToTopButton.style.position = 'fixed';
     backToTopButton.style.bottom = '20px';
     backToTopButton.style.right = '20px';
-    backToTopButton.style.backgroundColor = '#ff0077';
+    backToTopButton.style.backgroundColor = '#8e44ad';
     backToTopButton.style.color = '#fff';
     backToTopButton.style.border = 'none';
     backToTopButton.style.padding = '10px 20px';
