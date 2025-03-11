@@ -1,0 +1,19 @@
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #9400D3, 0 0 20px #9400D3; }
+    50% { text-shadow: 0 0 20px #ffffff, 0 0 30px #9400D3; }
+    100% { text-shadow: 0 0 10px #9400D3, 0 0 20px #9400D3; }
+}
+
+.glowing-text {
+    animation: glow 2s infinite alternate;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
