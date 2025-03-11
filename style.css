@@ -1,41 +1,135 @@
-/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #9400D3 50%, #000000 30%, #ffffff 20%);
+    background-color: black;
     color: white;
     margin: 0;
     padding: 0;
 }
 
-/* Navbar */
 header {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #9400D3, #4B0082);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-header h1 {
-    color: #9400D3;
-    text-transform: uppercase;
-    font-size: 28px;
-}
-
-/* Sections */
-section {
-    padding: 50px;
-    text-align: center;
-}
-
-h2 {
-    color: #9400D3;
+.logo {
     font-size: 24px;
-    text-transform: uppercase;
+    font-weight: bold;
 }
 
-/* Footer */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #9400D3;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 70px;
+}
+
+.hero .gradient {
+    color: #9400D3;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #9400D3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #4B0082;
+}
+
+.education, .coin-picks, .testimonials {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.edu-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.edu-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.edu-card:hover {
+    transform: scale(1.05);
+}
+
+.edu-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.coin-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.coin {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.coin:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+}
+
 footer {
-    background: rgba(0, 0, 0, 0.9);
     text-align: center;
     padding: 20px;
-    font-size: 14px;
+    background: #222;
 }
