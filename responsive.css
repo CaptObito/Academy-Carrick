@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(135deg, #9400D3 60%, #000000 30%, #ffffff 10%);
+    }
+    
+    header h1 {
+        font-size: 22px;
+    }
+
+    section {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
