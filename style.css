@@ -1,129 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-* {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: white;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background-color: #0a0a0a;
-    color: #fff;
-    line-height: 1.6;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: #111;
-    border-bottom: 2px solid #7b00ff;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    width: 120px;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
 }
 
 nav ul {
-    display: flex;
     list-style: none;
+    padding: 0;
 }
 
 nav ul li {
+    display: inline;
     margin: 0 15px;
 }
 
 nav ul li a {
+    color: white;
     text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    transition: 0.3s;
 }
 
-nav ul li a:hover {
-    color: #7b00ff;
-}
-
-#hero {
+.section {
+    padding: 50px;
     text-align: center;
-    padding: 120px 20px 60px;
-    background: url('img/banner-hero.jpg') center/cover no-repeat;
-}
-
-.hero-img {
-    max-width: 100%;
-    height: auto;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    color: #9d4edd;
 }
 
-p {
-    font-size: 1.2rem;
-    opacity: 0.8;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
-    background: #7b00ff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+.highlight {
+    color: #5a189a;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-.btn:hover {
-    background: #9d00ff;
+.winrate {
+    color: #00ff00;
+    font-weight: bold;
 }
 
-section {
-    padding: 50px 20px;
-    text-align: center;
+.coin-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.course, .price, .testimonial, .faq-item {
-    background: #222;
-    padding: 20px;
-    margin: 15px auto;
-    max-width: 800px;
+.coin {
+    background-color: #1a1a1a;
+    padding: 15px;
     border-radius: 10px;
-    border-left: 5px solid #7b00ff;
+    width: 200px;
 }
 
-.course img, .testimonial img {
-    width: 100%;
-    border-radius: 5px;
+.edukasi-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.price h3 {
-    color: #7b00ff;
-    font-size: 1.5rem;
-}
-
-.price p {
-    font-size: 1rem;
-    margin: 5px 0;
-}
-
-footer {
-    background: #111;
+.edukasi-item {
+    background-color: #1a1a1a;
     padding: 20px;
-    text-align: center;
-    margin-top: 30px;
+    border-radius: 10px;
+    width: 200px;
 }
 
-.footer-bg {
-    width: 100%;
-    opacity: 0.3;
+.join-button, .join-discord {
+    background-color: #9d4edd;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.join-button:hover, .join-discord:hover {
+    background-color: #5a189a;
+}
+
+.testimoni-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimoni {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
 }
