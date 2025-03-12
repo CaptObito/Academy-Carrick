@@ -1,23 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
-    margin: 0;
-    padding: 0;
+    background-color: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: linear-gradient(90deg, #9400D3, #4B0082);
+    padding: 15px 30px;
+    background: #111;
+    border-bottom: 2px solid #7b00ff;
     position: fixed;
     width: 100%;
     top: 0;
@@ -25,111 +27,103 @@ header {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    width: 120px;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 20px;
+    list-style: none;
 }
 
-nav a {
-    color: white;
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     text-decoration: none;
+    color: #fff;
+    font-weight: 600;
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: #9400D3;
+nav ul li a:hover {
+    color: #7b00ff;
 }
 
-.hero {
+#hero {
     text-align: center;
-    padding: 100px 20px;
-    margin-top: 70px;
+    padding: 120px 20px 60px;
+    background: url('img/banner-hero.jpg') center/cover no-repeat;
 }
 
-.hero .gradient {
-    color: #9400D3;
+.hero-img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0.8;
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    background: #9400D3;
-    color: white;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #7b00ff;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #4B0082;
+    background: #9d00ff;
 }
 
-.education, .coin-picks, .testimonials {
+section {
     padding: 50px 20px;
     text-align: center;
 }
 
-.edu-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.edu-card {
+.course, .price, .testimonial, .faq-item {
     background: #222;
     padding: 20px;
+    margin: 15px auto;
+    max-width: 800px;
     border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
+    border-left: 5px solid #7b00ff;
 }
 
-.edu-card:hover {
-    transform: scale(1.05);
-}
-
-.edu-card img {
+.course img, .testimonial img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
-.coin-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.price h3 {
+    color: #7b00ff;
+    font-size: 1.5rem;
 }
 
-.coin {
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.coin:hover {
-    transform: scale(1.05);
-}
-
-.testimonial-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.testimonial {
-    background: #333;
-    padding: 20px;
-    border-radius: 10px;
-    width: 40%;
+.price p {
+    font-size: 1rem;
+    margin: 5px 0;
 }
 
 footer {
-    text-align: center;
+    background: #111;
     padding: 20px;
-    background: #222;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-bg {
+    width: 100%;
+    opacity: 0.3;
 }
