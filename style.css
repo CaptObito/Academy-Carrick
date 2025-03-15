@@ -1,100 +1,58 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #0d0d0d;
-    color: white;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
 }
 
-header {
-    background-color: black;
-    padding: 20px;
+body {
+    background: #0a0a0a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.section {
-    padding: 50px;
-    text-align: center;
-}
-
-h2 {
-    color: #9d4edd;
-}
-
-.highlight {
-    color: #5a189a;
-    font-weight: bold;
-}
-
-.winrate {
-    color: #00ff00;
-    font-weight: bold;
-}
-
-.coin-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.coin {
-    background-color: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-    width: 200px;
-}
-
-.edukasi-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.edukasi-item {
-    background-color: #1a1a1a;
+.container {
+    position: relative;
     padding: 20px;
-    border-radius: 10px;
-    width: 200px;
 }
 
-.join-button, .join-discord {
-    background-color: #9d4edd;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
+h1.glitch {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan;
+    animation: glitch 1s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { transform: skewX(-10deg); }
+    100% { transform: skewX(10deg); }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.glow-btn {
+    background: none;
+    border: 2px solid cyan;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: cyan;
     cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
 }
 
-.join-button:hover, .join-discord:hover {
-    background-color: #5a189a;
-}
-
-.testimoni-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.testimoni {
-    background-color: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-    width: 250px;
+.glow-btn:hover {
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 20px cyan;
 }
