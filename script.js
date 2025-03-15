@@ -1,25 +1,16 @@
-function showAlert() {
-    alert("Selamat datang di dunia futuristik!");
+
+function goToLayer(layerId) {
+    document.getElementById(layerId).scrollIntoView({ behavior: 'smooth' });
 }
 
-function scrollToLayer2() {
-    document.getElementById("layer2").scrollIntoView({ behavior: "smooth" });
+function showPopup() {
+    document.getElementById('popup').style.display = 'block';
 }
 
-function scrollToLayer2() {
-    document.getElementById("layer2").scrollIntoView({ behavior: "smooth" });
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
 }
 
-// Efek fade-in saat scroll
-document.addEventListener("scroll", function () {
-    let elements = document.querySelectorAll(".fade-in");
-    let screenHeight = window.innerHeight;
-
-    elements.forEach((el) => {
-        let position = el.getBoundingClientRect().top;
-        if (position < screenHeight - 100) {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-        }
-    });
-});
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
