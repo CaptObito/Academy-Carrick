@@ -1,64 +1,199 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Futuristik</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PROJECTGPT - Megaproyek Futuristik</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Navigation Menu -->
-    <nav class="navbar">
-        <button onclick="goToLayer('layer1')">Home</button>
-        <button onclick="goToLayer('layer2')">Technology</button>
-        <button onclick="goToLayer('layer3')">AI Innovation</button>
-        <button onclick="goToLayer('layer4')">Cyber Security</button>
-        <button onclick="goToLayer('layer5')">Contact</button>
-        <button onclick="toggleDarkMode()">Dark Mode</button>
+  <!-- NAVIGATION BAR -->
+  <header class="navbar">
+    <div class="logo">PROJECTGPT</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero">Home</a>
+      <a href="#features">Features</a>
+      <a href="#ai-demo">AI Demo</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+      <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
     </nav>
-
-    <!-- Layer 1: Home -->
-    <div id="layer1" class="layer">
-        <h1>Welcome to the Future</h1>
-        <p>Explore the most advanced technology and innovations shaping our world.</p>
-        <button class="btn-glow" onclick="showPopup()">Learn More</button>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </header>
 
-    <!-- Layer 2: Technology -->
-    <div id="layer2" class="layer">
-        <h2>Cutting-edge Technology</h2>
-        <p>Discover the latest advancements in AI, quantum computing, and robotics.</p>
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 class="glitch-text" data-text="WELCOME TO PROJECTGPT">
+        WELCOME TO PROJECTGPT
+      </h1>
+      <h2 class="typewriter"></h2>
+      <p>Experience the next-generation platform for AI and Futuristic Technologies</p>
+      <button class="btn-glow" onclick="openModal()">Learn More</button>
     </div>
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+  </section>
 
-    <!-- Layer 3: AI Innovation -->
-    <div id="layer3" class="layer">
-        <h2>The Rise of AI</h2>
-        <p>Artificial Intelligence is revolutionizing industries from healthcare to finance.</p>
+  <!-- FEATURES SECTION -->
+  <section class="features" id="features">
+    <h2>Futuristic Features</h2>
+    <div class="features-container">
+      <div class="feature-card">
+        <h3>Neon UI/UX</h3>
+        <p>Modern and eye-catching interface with glowing effects and advanced animations.</p>
+      </div>
+      <div class="feature-card">
+        <h3>3D Parallax</h3>
+        <p>Immersive parallax backgrounds for a dynamic, multi-layered experience.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Responsive Design</h3>
+        <p>Seamlessly adapts to mobile, tablet, and desktop devices.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Dark Mode Toggle</h3>
+        <p>Instantly switch between light and dark themes with a single click.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Layer 4: Cyber Security -->
-    <div id="layer4" class="layer">
-        <h2>Cyber Security & Privacy</h2>
-        <p>Protect your data with the latest security measures and encryption technologies.</p>
+  <!-- AI DEMO SECTION -->
+  <section class="ai-demo" id="ai-demo">
+    <h2>AI Innovations</h2>
+    <p>Explore cutting-edge AI technology powering the future of automation, data analysis, and more.</p>
+    <div class="ai-container">
+      <div class="ai-item fade-in">
+        <h3>Machine Learning</h3>
+        <p>Empowering predictive models to enhance decision-making across industries.</p>
+      </div>
+      <div class="ai-item fade-in">
+        <h3>Natural Language Processing</h3>
+        <p>Enabling machines to understand and interact using human language.</p>
+      </div>
+      <div class="ai-item fade-in">
+        <h3>Computer Vision</h3>
+        <p>Revolutionizing image recognition, medical diagnostics, and autonomous vehicles.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Layer 5: Contact -->
-    <div id="layer5" class="layer">
-        <h2>Get in Touch</h2>
-        <p>Want to collaborate? Reach out to us via email or social media.</p>
-    </div>
-
-    <!-- Popup Modal -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <h3>Futuristic Innovations</h3>
-            <p>Discover how AI, blockchain, and space technology are shaping the future.</p>
-            <button onclick="closePopup()">Close</button>
+  <!-- ROADMAP SECTION -->
+  <section class="roadmap" id="roadmap">
+    <h2>PROJECTGPT Roadmap</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Q1</div>
+        <div class="timeline-content">
+          <h3>Initial Launch</h3>
+          <p>Release MVP with core AI functionalities and basic user interface.</p>
         </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Q2</div>
+        <div class="timeline-content">
+          <h3>Feature Expansion</h3>
+          <p>Introduce advanced analytics, data visualization, and cloud integration.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Q3</div>
+        <div class="timeline-content">
+          <h3>Global Collaboration</h3>
+          <p>Open platform for developers and businesses to integrate AI solutions.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Q4</div>
+        <div class="timeline-content">
+          <h3>Futuristic Upgrades</h3>
+          <p>Launch AR/VR support, real-time data streaming, and metaverse-ready features.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- TEAM SECTION -->
+  <section class="team" id="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-cards">
+      <div class="team-card">
+        <div class="team-card-front">
+          <img src="https://source.unsplash.com/200x200/?face,cyber" alt="Member">
+          <h3>John AI</h3>
+          <p>CEO & Visionary</p>
+        </div>
+        <div class="team-card-back">
+          <p>John AI is the driving force behind PROJECTGPT, with over 10 years in AI research.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-front">
+          <img src="https://source.unsplash.com/200x200/?face,robotics" alt="Member">
+          <h3>Sarah ML</h3>
+          <p>Lead Data Scientist</p>
+        </div>
+        <div class="team-card-back">
+          <p>Sarah specializes in machine learning models that power the platform's intelligence.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-front">
+          <img src="https://source.unsplash.com/200x200/?face,tech" alt="Member">
+          <h3>Mike VR</h3>
+          <p>XR Developer</p>
+        </div>
+        <div class="team-card-back">
+          <p>Mike integrates virtual and augmented reality features into the PROJECTGPT platform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <h2>Get In Touch</h2>
+    <p>Have questions or want to collaborate? Reach out to us below.</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required/>
+      <input type="email" placeholder="Your Email" required/>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit" class="btn-glow">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 PROJECTGPT. All Rights Reserved.</p>
+    <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+  </footer>
+
+  <!-- MODAL POPUP -->
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>PROJECTGPT Megaproyek</h2>
+      <p>
+        Selamat datang di megaproyek futuristik kita! Di sini, kita menggabungkan
+        <strong>AI</strong>, <strong>Blockchain</strong>, dan <strong>XR</strong>
+        untuk menciptakan ekosistem digital masa depan.
+      </p>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
 </body>
 </html>
