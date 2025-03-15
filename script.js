@@ -6,6 +6,10 @@ function scrollToLayer2() {
     document.getElementById("layer2").scrollIntoView({ behavior: "smooth" });
 }
 
+function scrollToLayer2() {
+    document.getElementById("layer2").scrollIntoView({ behavior: "smooth" });
+}
+
 // Efek fade-in saat scroll
 document.addEventListener("scroll", function () {
     let elements = document.querySelectorAll(".fade-in");
