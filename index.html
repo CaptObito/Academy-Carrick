@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,30 +8,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="glitch">WELCOME TO THE FUTURE</h1>
-        <p class="subtitle">Website ini dibuat dengan teknologi terkeren!</p>
-        <button class="glow-btn" onclick="showAlert()">EXPLORE</button>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <button onclick="goToLayer('layer1')">Home</button>
+        <button onclick="goToLayer('layer2')">Technology</button>
+        <button onclick="goToLayer('layer3')">AI Innovation</button>
+        <button onclick="goToLayer('layer4')">Cyber Security</button>
+        <button onclick="goToLayer('layer5')">Contact</button>
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+    </nav>
+
+    <!-- Layer 1: Home -->
+    <div id="layer1" class="layer">
+        <h1>Welcome to the Future</h1>
+        <p>Explore the most advanced technology and innovations shaping our world.</p>
+        <button class="btn-glow" onclick="showPopup()">Learn More</button>
     </div>
+
+    <!-- Layer 2: Technology -->
+    <div id="layer2" class="layer">
+        <h2>Cutting-edge Technology</h2>
+        <p>Discover the latest advancements in AI, quantum computing, and robotics.</p>
+    </div>
+
+    <!-- Layer 3: AI Innovation -->
+    <div id="layer3" class="layer">
+        <h2>The Rise of AI</h2>
+        <p>Artificial Intelligence is revolutionizing industries from healthcare to finance.</p>
+    </div>
+
+    <!-- Layer 4: Cyber Security -->
+    <div id="layer4" class="layer">
+        <h2>Cyber Security & Privacy</h2>
+        <p>Protect your data with the latest security measures and encryption technologies.</p>
+    </div>
+
+    <!-- Layer 5: Contact -->
+    <div id="layer5" class="layer">
+        <h2>Get in Touch</h2>
+        <p>Want to collaborate? Reach out to us via email or social media.</p>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h3>Futuristic Innovations</h3>
+            <p>Discover how AI, blockchain, and space technology are shaping the future.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
-<!-- LAYER 2 -->
-<section class="layer2" id="layer2">
-    <h2 class="fade-in">Teknologi Masa Depan</h2>
-    <div class="card-container">
-        <div class="card fade-in">
-            <h3>AI & Machine Learning</h3>
-            <p>Kecerdasan buatan yang semakin berkembang.</p>
-        </div>
-        <div class="card fade-in">
-            <h3>Blockchain & Crypto</h3>
-            <p>Teknologi desentralisasi yang mengubah dunia finansial.</p>
-        </div>
-        <div class="card fade-in">
-            <h3>Metaverse & VR</h3>
-            <p>Dunia virtual yang semakin nyata dan interaktif.</p>
-        </div>
-    </div>
-</section>
