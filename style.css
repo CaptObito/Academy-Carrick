@@ -1,106 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif;
-}
 
 body {
-    background: #0a0a0a;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0a0a0a;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
     text-align: center;
 }
 
-.container {
-    position: relative;
-    padding: 20px;
-}
-
-h1.glitch {
-    font-size: 3rem;
-    text-transform: uppercase;
-    color: cyan;
-    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan;
-    animation: glitch 1s infinite alternate;
-}
-
-@keyframes glitch {
-    0% { transform: skewX(-10deg); }
-    100% { transform: skewX(10deg); }
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-.glow-btn {
-    background: none;
-    border: 2px solid cyan;
+.navbar button {
+    margin: 5px;
     padding: 10px 20px;
-    font-size: 1rem;
-    color: cyan;
+    border: none;
+    background: cyan;
+    color: black;
+    font-weight: bold;
     cursor: pointer;
-    text-transform: uppercase;
     transition: 0.3s;
 }
 
-.glow-btn:hover {
-    background: cyan;
-    color: black;
-    box-shadow: 0 0 20px cyan;
+.navbar button:hover {
+    background: lime;
 }
 
-/* LAYER 2 */
-.layer2 {
-    background: url('https://source.unsplash.com/1600x900/?cyberpunk,technology') no-repeat center center/cover;
+.layer {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    text-align: center;
+    font-size: 24px;
 }
 
-.layer2 h2 {
-    font-size: 2.5rem;
-    color: cyan;
-    text-shadow: 0 0 15px cyan;
-    margin-bottom: 20px;
+#layer1 { background: radial-gradient(circle, #000, #111); }
+#layer2 { background: linear-gradient(to right, #002244, #004488); }
+#layer3 { background: linear-gradient(to bottom, #220044, #660088); }
+#layer4 { background: linear-gradient(to bottom, #002200, #008800); }
+#layer5 { background: linear-gradient(to bottom, #440000, #880000); }
+
+.btn-glow {
+    padding: 15px 30px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    background: cyan;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px cyan;
+    transition: 0.3s;
 }
 
-.card-container {
-    display: flex;
-    gap: 20px;
+.btn-glow:hover {
+    box-shadow: 0px 0px 20px lime;
 }
 
-.card {
-    background: rgba(0, 255, 255, 0.1);
-    border: 2px solid cyan;
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #111;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0px 0px 20px cyan;
+}
+
+.popup-content {
     text-align: center;
-    width: 250px;
-    box-shadow: 0 0 10px cyan;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px cyan;
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
 }
