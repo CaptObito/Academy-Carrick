@@ -1,5 +1,3 @@
-/* GOOGLE FONTS: Orbitron & Rajdhani already imported in HTML */
-
 /* RESET & GLOBAL */
 * {
   margin: 0;
@@ -26,7 +24,7 @@ body.dark-mode {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0,0,0,0.85);
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -73,7 +71,6 @@ body.dark-mode {
   color: #000;
 }
 
-/* HAMBURGER MENU (MOBILE) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -89,15 +86,37 @@ body.dark-mode {
   transition: 0.4s;
 }
 
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: rgba(0,0,0,0.95);
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    transition: height 0.5s;
+  }
+  .nav-links.active {
+    height: 250px;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
 /* HERO SECTION */
 .hero {
   position: relative;
   height: 100vh;
+  padding-top: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 60px; /* space for navbar */
   text-align: center;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -109,7 +128,12 @@ body.dark-mode {
   font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
   margin-bottom: 10px;
-  text-transform: uppercase;
+  color: cyan;
+  text-shadow: 0 0 10px cyan;
+}
+
+.hero-content h2 {
+  margin-bottom: 20px;
 }
 
 .hero-content p {
@@ -117,10 +141,20 @@ body.dark-mode {
   font-size: 1.2rem;
 }
 
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://source.unsplash.com/1920x1080/?cyberpunk,city') no-repeat center center/cover;
+  filter: brightness(0.4);
+  z-index: 1;
+}
+
 /* GLITCH TEXT */
 .glitch-text {
   position: relative;
-  color: cyan;
   animation: glitch 2s infinite;
 }
 
@@ -130,12 +164,14 @@ body.dark-mode {
   position: absolute;
   left: 0;
 }
+
 .glitch-text::before {
   text-shadow: 2px 0 magenta;
   top: 0;
   left: 2px;
   animation: glitch-anim 2s infinite;
 }
+
 .glitch-text::after {
   text-shadow: -2px 0 lime;
   top: 0;
@@ -187,35 +223,6 @@ body.dark-mode {
 @keyframes blink {
   0%, 100% { border-color: transparent; }
   50% { border-color: cyan; }
-}
-
-/* PARALLAX BG */
-.parallax-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://source.unsplash.com/1920x1080/?cyberpunk,city') no-repeat center center/cover;
-  filter: brightness(0.4);
-  z-index: 1;
-}
-
-/* GLOW BUTTON */
-.btn-glow {
-  background: cyan;
-  color: #000;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  box-shadow: 0 0 10px cyan;
-  transition: 0.3s;
-}
-
-.btn-glow:hover {
-  box-shadow: 0 0 20px magenta;
 }
 
 /* FEATURES SECTION */
@@ -287,7 +294,7 @@ body.dark-mode {
   border-radius: 8px;
   width: 250px;
   box-shadow: 0 0 10px cyan;
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 
 .ai-item:hover {
@@ -297,6 +304,63 @@ body.dark-mode {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
+}
+
+/* CHATBOT SECTION */
+.chatbot {
+  padding: 100px 20px;
+  text-align: center;
+  background: #222;
+}
+
+.chatbot h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: cyan;
+}
+
+.chat-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px cyan;
+}
+
+.chat-window {
+  height: 300px;
+  overflow-y: auto;
+  background: #000;
+  border: 1px solid cyan;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid cyan;
+  background: #111;
+  color: #fff;
+}
+
+.chat-input-container button {
+  background: cyan;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-input-container button:hover {
+  background: darkcyan;
 }
 
 /* ROADMAP SECTION */
@@ -371,6 +435,7 @@ body.dark-mode {
   width: 200px;
   height: 300px;
   perspective: 1000px;
+  position: relative;
 }
 
 .team-card-front,
@@ -378,13 +443,15 @@ body.dark-mode {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  position: absolute;
   backface-visibility: hidden;
   box-shadow: 0 0 10px cyan;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: transform 0.8s;
 }
 
@@ -411,6 +478,44 @@ body.dark-mode {
 
 .team-card:hover .team-card-back {
   transform: rotateY(360deg);
+}
+
+/* TOKENOMICS SECTION */
+.tokenomics {
+  padding: 100px 20px;
+  text-align: center;
+  background: #222;
+}
+
+.tokenomics h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: cyan;
+}
+
+.tokenomics-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.token-card {
+  background: rgba(255,255,255,0.1);
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px cyan;
+  transition: transform 0.3s;
+}
+
+.token-card:hover {
+  transform: scale(1.05);
+}
+
+.token-card h3 {
+  margin-bottom: 10px;
+  color: magenta;
 }
 
 /* CONTACT SECTION */
@@ -466,7 +571,6 @@ body.dark-mode {
   color: cyan;
 }
 
-/* SCROLL TO TOP BUTTON */
 .scroll-top-btn {
   position: absolute;
   right: 20px;
@@ -482,7 +586,7 @@ body.dark-mode {
 
 /* MODAL */
 .modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -520,33 +624,8 @@ body.dark-mode {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.95);
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    flex-direction: column;
-    transition: 0.5s;
-  }
-
-  .nav-links a {
-    margin: 10px 0;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .features-container, .ai-container, .team-cards {
+  .features-container, .ai-container, .team-cards, .tokenomics-container {
     flex-direction: column;
     align-items: center;
   }
-}
-
-/* Show nav links when .nav-links.active */
-.nav-links.active {
-  height: 250px;
 }
