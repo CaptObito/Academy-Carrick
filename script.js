@@ -1,20 +1,20 @@
-// TOGGLE MOBILE MENU
+// Toggle Mobile Menu
 function toggleMenu() {
   const navLinks = document.getElementById('navLinks');
   navLinks.classList.toggle('active');
 }
 
-// SCROLL TO TOP
+// Scroll to Top
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// DARK MODE TOGGLE
+// Dark Mode Toggle
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 }
 
-// MODAL POPUP
+// Modal Popup for Info
 function openModal() {
   document.getElementById('infoModal').style.display = 'block';
 }
@@ -22,7 +22,7 @@ function closeModal() {
   document.getElementById('infoModal').style.display = 'none';
 }
 
-// TYPEWRITER EFFECT
+// Typewriter Effect
 const typewriterText = "The Future of AI & Cyber Tech";
 let i = 0;
 function typeWriter() {
@@ -32,9 +32,17 @@ function typeWriter() {
     setTimeout(typeWriter, 100);
   }
 }
-window.onload = typeWriter;
+window.onload = function() {
+  typeWriter(); // Start typewriter effect on load
+  // Check if user is already logged in
+  const loggedInUser = localStorage.getItem('loggedInUser');
+  if (loggedInUser) {
+    document.getElementById('usernameDisplay').textContent = loggedInUser;
+    document.getElementById('dashboard').style.display = 'block';
+  }
+};
 
-// FADE-IN ON SCROLL
+// Fade-in on Scroll for elements with class 'fade-in'
 document.addEventListener('scroll', function() {
   const fadeElements = document.querySelectorAll('.fade-in');
   const screenHeight = window.innerHeight;
@@ -48,20 +56,19 @@ document.addEventListener('scroll', function() {
   });
 });
 
-// CHATBOT FUNCTIONALITY
+// Chatbot Functionality
 function sendChat() {
   const input = document.getElementById('chatInput');
   const message = input.value.trim();
   if (message !== "") {
     appendChatMessage("User", message);
-    // Simulasi respon bot (bisa dikembangkan auto-learning nantinya)
+    // Simulate bot response
     setTimeout(() => {
       appendChatMessage("Bot", "Terima kasih atas pesan Anda. Fitur auto-learn sedang dikembangkan!");
     }, 1000);
     input.value = "";
   }
 }
-
 function appendChatMessage(sender, message) {
   const chatWindow = document.getElementById('chatWindow');
   const msgDiv = document.createElement('div');
@@ -71,7 +78,7 @@ function appendChatMessage(sender, message) {
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
-// VOICE INPUT (Web Speech API)
+// Voice Input (Web Speech API)
 function startVoiceInput() {
   if (!('webkitSpeechRecognition' in window)) {
     alert("Voice recognition not supported in your browser.");
@@ -84,4 +91,33 @@ function startVoiceInput() {
     const transcript = event.results[0][0].transcript;
     document.getElementById('chatInput').value = transcript;
   };
+}
+
+// Login Modal Functionality
+function openLoginModal() {
+  document.getElementById('loginModal').style.display = 'block';
+}
+function closeLoginModal() {
+  document.getElementById('loginModal').style.display = 'none';
+}
+
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+  // Simulate login (in real case, validate via backend)
+  if (username && password) {
+    localStorage.setItem('loggedInUser', username);
+    document.getElementById('usernameDisplay').textContent = username;
+    document.getElementById('dashboard').style.display = 'block';
+    closeLoginModal();
+  } else {
+    alert("Please enter valid credentials.");
+  }
+});
+
+// Logout Functionality
+function logout() {
+  localStorage.removeItem('loggedInUser');
+  document.getElementById('dashboard').style.display = 'none';
 }
