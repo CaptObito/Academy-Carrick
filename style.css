@@ -4,6 +4,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* FONT & BODY */
 body {
   font-family: 'Rajdhani', sans-serif;
   background-color: #0a0a0a;
@@ -22,13 +24,13 @@ body.dark-mode {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   padding: 10px 20px;
   display: flex;
   align-items: center;
   z-index: 999;
 }
-.navbar .logo {
+.logo {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
@@ -62,12 +64,14 @@ body.dark-mode {
   background: cyan;
   color: #000;
 }
+
+/* HAMBURGER MENU (MOBILE) */
 .hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
   margin-left: 1rem;
+  cursor: pointer;
 }
 .hamburger span {
   width: 25px;
@@ -75,12 +79,14 @@ body.dark-mode {
   background: cyan;
   transition: 0.4s;
 }
+
+/* RESPONSIVE NAV */
 @media screen and (max-width: 768px) {
   .nav-links {
     position: absolute;
     top: 60px;
     left: 0;
-    background: rgba(0,0,0,0.95);
+    background: rgba(0, 0, 0, 0.95);
     width: 100%;
     height: 0;
     overflow: hidden;
@@ -88,7 +94,7 @@ body.dark-mode {
     transition: height 0.5s;
   }
   .nav-links.active {
-    height: 250px;
+    height: 200px;
   }
   .hamburger {
     display: flex;
@@ -117,18 +123,31 @@ body.dark-mode {
   color: cyan;
   text-shadow: 0 0 10px cyan;
 }
-.hero-content h2 { margin-bottom: 20px; }
-.hero-content p { margin: 10px 0; font-size: 1.2rem; }
+.hero-content p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
 .parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.4);
+  z-index: 1;
   animation: fadeIn 1s ease-in;
 }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 /* GLITCH & TYPEWRITER */
-.glitch-text { position: relative; animation: glitch 2s infinite; }
+.glitch-text {
+  position: relative;
+  animation: glitch 2s infinite;
+}
 .glitch-text::before,
 .glitch-text::after {
   content: attr(data-text);
@@ -155,8 +174,22 @@ body.dark-mode {
   80% { text-shadow: 2px 0 magenta; }
   100% { text-shadow: 2px 0 magenta; }
 }
-@keyframes glitch-anim { 0% { clip: rect(0, 900px, 0, 0); } 5% { clip: rect(0, 900px, 100px, 0); } 10% { clip: rect(0, 900px, 0, 0); } 15% { clip: rect(0, 900px, 60px, 0); } 20% { clip: rect(0, 900px, 0, 0); } 100% { clip: rect(0, 900px, 0, 0); } }
-@keyframes glitch-anim2 { 0% { clip: rect(100px, 900px, 100px, 0); } 5% { clip: rect(0, 900px, 0, 0); } 10% { clip: rect(50px, 900px, 100px, 0); } 15% { clip: rect(0, 900px, 0, 0); } 20% { clip: rect(70px, 900px, 100px, 0); } 100% { clip: rect(0, 900px, 0, 0); } }
+@keyframes glitch-anim {
+  0% { clip: rect(0, 900px, 0, 0); }
+  5% { clip: rect(0, 900px, 100px, 0); }
+  10% { clip: rect(0, 900px, 0, 0); }
+  15% { clip: rect(0, 900px, 60px, 0); }
+  20% { clip: rect(0, 900px, 0, 0); }
+  100% { clip: rect(0, 900px, 0, 0); }
+}
+@keyframes glitch-anim2 {
+  0% { clip: rect(100px, 900px, 100px, 0); }
+  5% { clip: rect(0, 900px, 0, 0); }
+  10% { clip: rect(50px, 900px, 100px, 0); }
+  15% { clip: rect(0, 900px, 0, 0); }
+  20% { clip: rect(70px, 900px, 100px, 0); }
+  100% { clip: rect(0, 900px, 0, 0); }
+}
 .typewriter {
   border-right: 3px solid cyan;
   white-space: nowrap;
@@ -164,30 +197,121 @@ body.dark-mode {
   width: 0;
   animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
 }
-@keyframes typing { 0% { width: 0; } 100% { width: 100%; } }
-@keyframes blink { 0%, 100% { border-color: transparent; } 50% { border-color: cyan; } }
-
-/* FEATURES, AI DEMO, CHATBOT, DASHBOARD, BLOCKCHAIN, CONTACT */
-/* (Style untuk masing-masing section diadaptasi dari update sebelumnya dan disesuaikan agar konsisten) */
-/* Contoh: */
-.features { padding: 100px 20px; text-align: center; background: #111; transition: all 0.4s ease-in-out; }
-.features h2 { font-family: 'Orbitron', sans-serif; font-size: 2rem; margin-bottom: 30px; color: cyan; }
-.features-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-.feature-card { background: rgba(255, 255, 255, 0.1); width: 250px; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px cyan; transition: transform 0.3s; }
-.feature-card:hover { transform: scale(1.05); }
-.feature-card h3 { margin-bottom: 10px; color: magenta; }
-
-/* (Lanjutkan dengan style untuk .ai-demo, .chatbot, .dashboard, .blockchain, .contact, .footer, .modal) */
-/* Contoh tambahan untuk BLOCKCHAIN SECTION: */
-.blockchain {
-  padding: 100px 20px;
-  text-align: center;
-  background: linear-gradient(to right, #222, #000);
-  transition: all 0.4s ease-in-out;
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
 }
-.blockchain h2 { font-family: 'Orbitron', sans-serif; font-size: 2rem; margin-bottom: 20px; color: cyan; }
-.blockchain p { margin-bottom: 30px; font-size: 1.1rem; }
-.blockchain-container { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: cyan; }
+}
 
-/* FOOTER & MODAL Styles (sama seperti update sebelumnya) */
-/* ... */
+/* BUTTON GLOW */
+.btn-glow {
+  background: cyan;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px cyan;
+  transition: 0.3s;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 20px magenta;
+}
+
+/* FEATURES SECTION */
+.features {
+  background: #111;
+  padding: 80px 20px;
+  text-align: center;
+}
+.features h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: cyan;
+}
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px cyan;
+  transition: transform 0.3s;
+}
+.feature-card:hover {
+  transform: scale(1.05);
+}
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: magenta;
+}
+
+/* CONTACT SECTION */
+.contact {
+  background: #222;
+  padding: 80px 20px;
+  text-align: center;
+}
+.contact h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: cyan;
+}
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 2px solid cyan;
+  background: rgba(0, 255, 255, 0.1);
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+}
+.contact-form button {
+  background: cyan;
+  color: #000;
+  border: none;
+  padding: 15px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* FOOTER */
+.footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+.footer p {
+  margin: 0;
+  color: cyan;
+}
+.scroll-top-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: cyan;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
