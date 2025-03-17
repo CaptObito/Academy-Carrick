@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PROJECTGPT - Tahap 1 (Update 2.0)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECTGPT 2.0 - Stage 2: AI & Automation</title>
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-  <!-- Link ke CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <!-- Script dengan defer agar tidak memblok render -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Script dengan defer -->
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -22,13 +18,14 @@
     <nav class="nav-links" id="navLinks">
       <a href="#hero">Home</a>
       <a href="#features">Features</a>
+      <a href="#chatbot">Chatbot</a>
+      <a href="#dashboard">Dashboard</a>
       <a href="#contact">Contact</a>
+      <a href="javascript:void(0)" onclick="openLoginModal()">Login</a>
       <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
     </nav>
     <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </header>
 
@@ -37,16 +34,10 @@
     <div class="hero-content">
       <h1 class="glitch-text" data-text="WELCOME TO PROJECTGPT">WELCOME TO PROJECTGPT</h1>
       <h2 class="typewriter"></h2>
-      <p>Experience the future of AI and Cyber Tech.</p>
-      <button class="btn-glow" onclick="alert('Selamat datang di PROJECTGPT!')">Learn More</button>
+      <p>Experience the power of AI and automation.</p>
+      <button class="btn-futuristic" onclick="openModal()">Learn More</button>
     </div>
-    <!-- Gambar dengan lazy loading -->
-    <img 
-      src="https://source.unsplash.com/1920x1080/?cyberpunk,city"
-      alt="Parallax Background"
-      class="parallax-bg"
-      loading="lazy"
-    />
+    <img src="https://source.unsplash.com/1920x1080/?cyberpunk,city" alt="Background" class="parallax-bg" loading="lazy">
   </section>
 
   <!-- FEATURES SECTION -->
@@ -54,36 +45,89 @@
     <h2>Futuristic Features</h2>
     <div class="features-container">
       <div class="feature-card">
-        <h3>Neon UI/UX</h3>
-        <p>Kesan modern dengan efek glowing dan animasi smooth.</p>
+        <h3>Interactive AI Chatbot</h3>
+        <p>Instant answers and personalized assistance.</p>
       </div>
       <div class="feature-card">
-        <h3>Responsive Design</h3>
-        <p>Tampilan optimal di berbagai perangkat (mobile, tablet, desktop).</p>
+        <h3>Voice Command</h3>
+        <p>Control the platform with your voice using the Web Speech API.</p>
       </div>
       <div class="feature-card">
-        <h3>Dark Mode</h3>
-        <p>Toggle untuk mengubah tema, meningkatkan kenyamanan pengguna.</p>
+        <h3>User Dashboard</h3>
+        <p>Access your personalized data and activity stats.</p>
       </div>
     </div>
   </section>
 
+  <!-- CHATBOT SECTION -->
+  <section class="chatbot" id="chatbot">
+    <h2>AI Chatbot</h2>
+    <p>Ask questions, get recommendations, or simply chat with our AI.</p>
+    <div class="chat-container">
+      <div class="chat-window" id="chatWindow"></div>
+      <div class="chat-input-container">
+        <input type="text" id="chatInput" placeholder="Type your message..." />
+        <button class="btn-futuristic" onclick="sendChat()">Send</button>
+        <button class="btn-futuristic" onclick="startVoiceInput()">🎤</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD SECTION (Hidden by Default) -->
+  <section class="dashboard" id="dashboard" style="display:none;">
+    <h2>User Dashboard (Beta)</h2>
+    <p>Welcome, <span id="usernameDisplay"></span>! Check your token balance and NFT collection.</p>
+    <div class="dashboard-stats">
+      <div class="stat">
+        <h3>Token Balance</h3>
+        <p id="tokenBalance">1000</p>
+      </div>
+      <div class="stat">
+        <h3>NFT Collection</h3>
+        <p id="nftCollection">3 NFTs</p>
+      </div>
+    </div>
+    <button class="btn-futuristic" onclick="logout()">Logout</button>
+  </section>
+
   <!-- CONTACT SECTION -->
   <section class="contact" id="contact">
-    <h2>Get In Touch</h2>
-    <p>Ingin berkolaborasi? Silakan hubungi kami melalui form di bawah.</p>
+    <h2>Contact Us</h2>
+    <p>Have questions? Reach out to us!</p>
     <form class="contact-form">
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Your Email" required />
       <textarea rows="5" placeholder="Your Message"></textarea>
-      <button type="submit" class="btn-glow">Send Message</button>
+      <button type="submit" class="btn-futuristic">Send Message</button>
     </form>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <p>&copy; 2025 PROJECTGPT. All Rights Reserved.</p>
-    <button class="scroll-top-btn" onclick="scrollToTop()"></button>
+    <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
   </footer>
+
+  <!-- INFO MODAL -->
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>About PROJECTGPT</h2>
+      <p>PROJECTGPT integrates advanced AI, blockchain, and futuristic design for an unparalleled digital experience.</p>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit" class="btn-futuristic">Login</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
