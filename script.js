@@ -121,3 +121,34 @@ function logout() {
   localStorage.removeItem('loggedInUser');
   document.getElementById('dashboard').style.display = 'none';
 }
+
+// BLOCKCHAIN & SECURITY FUNCTIONS
+
+// Fungsi untuk Connect Wallet (menggunakan MetaMask jika tersedia)
+async function connectWallet() {
+  if (typeof window.ethereum !== 'undefined') {
+    try {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      const walletAddress = accounts[0];
+      document.getElementById('walletAddress').textContent = walletAddress;
+      // Simulasi pengambilan saldo token (ganti dengan integrasi API blockchain jika diperlukan)
+      document.getElementById('walletBalance').textContent = "2500";
+      document.getElementById('walletInfo').style.display = 'block';
+    } catch (error) {
+      alert("Error connecting wallet: " + error.message);
+    }
+  } else {
+    alert("MetaMask is not available. Please install it to connect your wallet.");
+  }
+}
+
+// Fungsi simulasi Two-Factor Authentication (2FA)
+function initiate2FA() {
+  // Di sini kita bisa menampilkan modal verifikasi 2FA. Untuk simulasi, gunakan prompt.
+  const code = prompt("Masukkan kode 2FA (simulasi):");
+  if (code === "123456") {
+    alert("2FA diaktifkan dengan sukses!");
+  } else {
+    alert("Kode 2FA tidak valid. Silakan coba lagi.");
+  }
+}
