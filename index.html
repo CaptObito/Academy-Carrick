@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROJECTGPT - Megaproyek Futuristik</title>
+  <title>PROJECTGPT - Stage 2: Dynamic Interactions & AI Integration</title>
   <link rel="stylesheet" href="style.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
@@ -18,10 +17,9 @@
       <a href="#features">Features</a>
       <a href="#ai-demo">AI Demo</a>
       <a href="#chatbot">Chatbot</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#team">Team</a>
-      <a href="#tokenomics">Tokenomics</a>
+      <a href="#dashboard">Dashboard</a>
       <a href="#contact">Contact</a>
+      <a href="javascript:void(0)" onclick="openLoginModal()">Login</a>
       <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
     </nav>
     <div class="hamburger" onclick="toggleMenu()">
@@ -92,97 +90,26 @@
       <div class="chat-input-container">
         <input type="text" id="chatInput" placeholder="Type your message here...">
         <button onclick="sendChat()">Send</button>
-        <button onclick="startVoiceInput()">ðŸŽ¤</button>
+        <button onclick="startVoiceInput()"></button>
       </div>
     </div>
   </section>
 
-  <!-- ROADMAP SECTION -->
-  <section class="roadmap" id="roadmap">
-    <h2>PROJECTGPT Roadmap</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">Q1</div>
-        <div class="timeline-content">
-          <h3>Initial Launch</h3>
-          <p>MVP release with core AI and futuristic UI.</p>
-        </div>
+  <!-- DASHBOARD SECTION (Hidden by default) -->
+  <section class="dashboard" id="dashboard" style="display:none;">
+    <h2>User Dashboard (Beta)</h2>
+    <p>Welcome, <span id="usernameDisplay"></span>! Here you can view your token balance and NFT collection.</p>
+    <div class="dashboard-stats">
+      <div class="stat">
+        <h3>Token Balance</h3>
+        <p id="tokenBalance">1000</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Q2</div>
-        <div class="timeline-content">
-          <h3>Feature Expansion</h3>
-          <p>Advanced analytics, voice AI, and enhanced chatbot capabilities.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Q3</div>
-        <div class="timeline-content">
-          <h3>Global Collaboration</h3>
-          <p>Open platform for developers and AI integrations.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Q4</div>
-        <div class="timeline-content">
-          <h3>Futuristic Upgrades</h3>
-          <p>AR/VR support, real-time data streaming, and NFT integration.</p>
-        </div>
+      <div class="stat">
+        <h3>NFT Collection</h3>
+        <p id="nftCollection">3 NFTs</p>
       </div>
     </div>
-  </section>
-
-  <!-- TEAM SECTION -->
-  <section class="team" id="team">
-    <h2>Meet Our Team</h2>
-    <div class="team-cards">
-      <div class="team-card">
-        <div class="team-card-front">
-          <img src="https://source.unsplash.com/200x200/?face,cyber" alt="Member">
-          <h3>John AI</h3>
-          <p>CEO & Visionary</p>
-        </div>
-        <div class="team-card-back">
-          <p>John leads the vision behind PROJECTGPT with over a decade in AI innovation.</p>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-card-front">
-          <img src="https://source.unsplash.com/200x200/?face,tech" alt="Member">
-          <h3>Sarah ML</h3>
-          <p>Lead Data Scientist</p>
-        </div>
-        <div class="team-card-back">
-          <p>Sarah drives data intelligence, ensuring our models are top-notch.</p>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-card-front">
-          <img src="https://source.unsplash.com/200x200/?face,vr" alt="Member">
-          <h3>Mike XR</h3>
-          <p>XR Developer</p>
-        </div>
-        <div class="team-card-back">
-          <p>Mike brings virtual and augmented reality to life within our platform.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOKENOMICS SECTION -->
-  <section class="tokenomics" id="tokenomics">
-    <h2>NFT & Tokenomics</h2>
-    <p>Empowering the community with blockchain-based rewards and NFT certifications.</p>
-    <div class="tokenomics-container">
-      <div class="token-card">
-        <h3>Academy Token</h3>
-        <p>Reward learning and participation with our native token.</p>
-      </div>
-      <div class="token-card">
-        <h3>NFT Certificates</h3>
-        <p>Earn NFT certificates to showcase your skills and achievements.</p>
-      </div>
-    </div>
+    <button onclick="logout()">Logout</button>
   </section>
 
   <!-- CONTACT SECTION -->
@@ -200,19 +127,31 @@
   <!-- FOOTER -->
   <footer class="footer">
     <p>&copy; 2025 PROJECTGPT. All Rights Reserved.</p>
-    <button class="scroll-top-btn" onclick="scrollToTop()">â†‘</button>
+    <button class="scroll-top-btn" onclick="scrollToTop()"></button>
   </footer>
 
-  <!-- MODAL POPUP -->
+  <!-- MODAL POPUP FOR INFO -->
   <div class="modal" id="infoModal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
       <h2>PROJECTGPT Megaproyek</h2>
       <p>
-        Selamat datang di megaproyek futuristik kita! Di sini, kita menggabungkan
-        <strong>AI</strong>, <strong>Blockchain</strong>, dan <strong>XR</strong>
-        untuk menciptakan ekosistem digital masa depan.
+        Welcome to our futuristic megaproject where we combine <strong>AI</strong>, <strong>Blockchain</strong>, and <strong>XR</strong>
+        to create a next-gen digital ecosystem.
       </p>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit" class="btn-glow">Login</button>
+      </form>
     </div>
   </div>
 
