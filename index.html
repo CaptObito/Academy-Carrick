@@ -112,6 +112,20 @@
     <button onclick="logout()">Logout</button>
   </section>
 
+<!-- BLOCKCHAIN & SECURITY SECTION -->
+<section class="blockchain" id="blockchain">
+  <h2>Blockchain & Security Integration</h2>
+  <p>Empowering our ecosystem with decentralized rewards and enhanced security.</p>
+  <div class="blockchain-container">
+    <button class="btn-glow" onclick="connectWallet()">Connect Wallet</button>
+    <div id="walletInfo" style="display:none;">
+      <p>Your Wallet: <span id="walletAddress"></span></p>
+      <p>Token Balance: <span id="walletBalance">0</span></p>
+    </div>
+    <button class="btn-glow" onclick="initiate2FA()">Enable 2FA</button>
+  </div>
+</section>
+
   <!-- CONTACT SECTION -->
   <section class="contact" id="contact">
     <h2>Get In Touch</h2>
