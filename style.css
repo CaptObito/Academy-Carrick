@@ -363,159 +363,31 @@ body.dark-mode {
   background: darkcyan;
 }
 
-/* ROADMAP SECTION */
-.roadmap {
-  background: #111;
-  color: #fff;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.roadmap h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: cyan;
-}
-
-.timeline {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.timeline-item {
-  display: flex;
-  margin-bottom: 30px;
-  align-items: center;
-}
-
-.timeline-date {
-  width: 60px;
-  height: 60px;
-  background: cyan;
-  color: #000;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  margin-right: 20px;
-}
-
-.timeline-content {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 8px;
-  flex: 1;
-}
-
-/* TEAM SECTION */
-.team {
-  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.team h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  font-family: 'Orbitron', sans-serif;
-  color: cyan;
-}
-
-.team-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.team-card {
-  width: 200px;
-  height: 300px;
-  perspective: 1000px;
-  position: relative;
-}
-
-.team-card-front,
-.team-card-back {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  backface-visibility: hidden;
-  box-shadow: 0 0 10px cyan;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.8s;
-}
-
-.team-card-front {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.team-card-front img {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
-}
-
-.team-card-back {
-  background: rgba(255, 0, 255, 0.1);
-  transform: rotateY(180deg);
-  padding: 10px;
-}
-
-.team-card:hover .team-card-front {
-  transform: rotateY(180deg);
-}
-
-.team-card:hover .team-card-back {
-  transform: rotateY(360deg);
-}
-
-/* TOKENOMICS SECTION */
-.tokenomics {
+/* DASHBOARD SECTION */
+.dashboard {
   padding: 100px 20px;
   text-align: center;
   background: #222;
 }
 
-.tokenomics h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: cyan;
-}
-
-.tokenomics-container {
+.dashboard-stats {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
+  margin: 30px 0;
 }
 
-.token-card {
+.dashboard-stats .stat {
   background: rgba(255,255,255,0.1);
-  width: 300px;
   padding: 20px;
   border-radius: 10px;
+  width: 200px;
   box-shadow: 0 0 10px cyan;
   transition: transform 0.3s;
 }
 
-.token-card:hover {
+.dashboard-stats .stat:hover {
   transform: scale(1.05);
-}
-
-.token-card h3 {
-  margin-bottom: 10px;
-  color: magenta;
 }
 
 /* CONTACT SECTION */
@@ -620,12 +492,4 @@ body.dark-mode {
   font-size: 30px;
   color: cyan;
   cursor: pointer;
-}
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 768px) {
-  .features-container, .ai-container, .team-cards, .tokenomics-container {
-    flex-direction: column;
-    align-items: center;
-  }
 }
