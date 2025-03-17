@@ -1,19 +1,15 @@
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROJECTGPT - Megaproyek Futuristik</title>
+  <link rel="stylesheet" href="style.css">
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- NAVIGATION BAR -->
   <header class="navbar">
     <div class="logo">PROJECTGPT</div>
@@ -21,29 +17,26 @@
       <a href="#hero">Home</a>
       <a href="#features">Features</a>
       <a href="#ai-demo">AI Demo</a>
+      <a href="#chatbot">Chatbot</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#team">Team</a>
+      <a href="#tokenomics">Tokenomics</a>
       <a href="#contact">Contact</a>
       <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
     </nav>
     <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </header>
 
   <!-- HERO SECTION -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <h1 class="glitch-text" data-text="WELCOME TO PROJECTGPT">
-        WELCOME TO PROJECTGPT
-      </h1>
+      <h1 class="glitch-text" data-text="WELCOME TO PROJECTGPT">WELCOME TO PROJECTGPT</h1>
       <h2 class="typewriter"></h2>
       <p>Experience the next-generation platform for AI and Futuristic Technologies</p>
       <button class="btn-glow" onclick="openModal()">Learn More</button>
     </div>
-    <!-- Parallax Background -->
     <div class="parallax-bg"></div>
   </section>
 
@@ -53,19 +46,19 @@
     <div class="features-container">
       <div class="feature-card">
         <h3>Neon UI/UX</h3>
-        <p>Modern and eye-catching interface with glowing effects and advanced animations.</p>
+        <p>Modern interface with glowing effects and advanced animations.</p>
       </div>
       <div class="feature-card">
         <h3>3D Parallax</h3>
-        <p>Immersive parallax backgrounds for a dynamic, multi-layered experience.</p>
+        <p>Immersive parallax backgrounds for a multi-layered experience.</p>
       </div>
       <div class="feature-card">
         <h3>Responsive Design</h3>
-        <p>Seamlessly adapts to mobile, tablet, and desktop devices.</p>
+        <p>Adapts seamlessly to mobile, tablet, and desktop devices.</p>
       </div>
       <div class="feature-card">
         <h3>Dark Mode Toggle</h3>
-        <p>Instantly switch between light and dark themes with a single click.</p>
+        <p>Switch between light and dark themes instantly.</p>
       </div>
     </div>
   </section>
@@ -73,19 +66,33 @@
   <!-- AI DEMO SECTION -->
   <section class="ai-demo" id="ai-demo">
     <h2>AI Innovations</h2>
-    <p>Explore cutting-edge AI technology powering the future of automation, data analysis, and more.</p>
+    <p>Explore cutting-edge AI technology powering the future.</p>
     <div class="ai-container">
       <div class="ai-item fade-in">
         <h3>Machine Learning</h3>
-        <p>Empowering predictive models to enhance decision-making across industries.</p>
+        <p>Predictive models enhancing decision-making across industries.</p>
       </div>
       <div class="ai-item fade-in">
-        <h3>Natural Language Processing</h3>
-        <p>Enabling machines to understand and interact using human language.</p>
+        <h3>NLP</h3>
+        <p>Enabling machines to understand and interact in human language.</p>
       </div>
       <div class="ai-item fade-in">
         <h3>Computer Vision</h3>
-        <p>Revolutionizing image recognition, medical diagnostics, and autonomous vehicles.</p>
+        <p>Revolutionizing image recognition, diagnostics, and autonomous tech.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHATBOT SECTION -->
+  <section class="chatbot" id="chatbot">
+    <h2>AI Chatbot</h2>
+    <p>Interact with our advanced chatbot, featuring voice input and auto-learning.</p>
+    <div class="chat-container">
+      <div class="chat-window" id="chatWindow"></div>
+      <div class="chat-input-container">
+        <input type="text" id="chatInput" placeholder="Type your message here...">
+        <button onclick="sendChat()">Send</button>
+        <button onclick="startVoiceInput()">ðŸŽ¤</button>
       </div>
     </div>
   </section>
@@ -98,28 +105,28 @@
         <div class="timeline-date">Q1</div>
         <div class="timeline-content">
           <h3>Initial Launch</h3>
-          <p>Release MVP with core AI functionalities and basic user interface.</p>
+          <p>MVP release with core AI and futuristic UI.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-date">Q2</div>
         <div class="timeline-content">
           <h3>Feature Expansion</h3>
-          <p>Introduce advanced analytics, data visualization, and cloud integration.</p>
+          <p>Advanced analytics, voice AI, and enhanced chatbot capabilities.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-date">Q3</div>
         <div class="timeline-content">
           <h3>Global Collaboration</h3>
-          <p>Open platform for developers and businesses to integrate AI solutions.</p>
+          <p>Open platform for developers and AI integrations.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-date">Q4</div>
         <div class="timeline-content">
           <h3>Futuristic Upgrades</h3>
-          <p>Launch AR/VR support, real-time data streaming, and metaverse-ready features.</p>
+          <p>AR/VR support, real-time data streaming, and NFT integration.</p>
         </div>
       </div>
     </div>
@@ -136,28 +143,44 @@
           <p>CEO & Visionary</p>
         </div>
         <div class="team-card-back">
-          <p>John AI is the driving force behind PROJECTGPT, with over 10 years in AI research.</p>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-card-front">
-          <img src="https://source.unsplash.com/200x200/?face,robotics" alt="Member">
-          <h3>Sarah ML</h3>
-          <p>Lead Data Scientist</p>
-        </div>
-        <div class="team-card-back">
-          <p>Sarah specializes in machine learning models that power the platform's intelligence.</p>
+          <p>John leads the vision behind PROJECTGPT with over a decade in AI innovation.</p>
         </div>
       </div>
       <div class="team-card">
         <div class="team-card-front">
           <img src="https://source.unsplash.com/200x200/?face,tech" alt="Member">
-          <h3>Mike VR</h3>
+          <h3>Sarah ML</h3>
+          <p>Lead Data Scientist</p>
+        </div>
+        <div class="team-card-back">
+          <p>Sarah drives data intelligence, ensuring our models are top-notch.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-front">
+          <img src="https://source.unsplash.com/200x200/?face,vr" alt="Member">
+          <h3>Mike XR</h3>
           <p>XR Developer</p>
         </div>
         <div class="team-card-back">
-          <p>Mike integrates virtual and augmented reality features into the PROJECTGPT platform.</p>
+          <p>Mike brings virtual and augmented reality to life within our platform.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS SECTION -->
+  <section class="tokenomics" id="tokenomics">
+    <h2>NFT & Tokenomics</h2>
+    <p>Empowering the community with blockchain-based rewards and NFT certifications.</p>
+    <div class="tokenomics-container">
+      <div class="token-card">
+        <h3>Academy Token</h3>
+        <p>Reward learning and participation with our native token.</p>
+      </div>
+      <div class="token-card">
+        <h3>NFT Certificates</h3>
+        <p>Earn NFT certificates to showcase your skills and achievements.</p>
       </div>
     </div>
   </section>
@@ -167,8 +190,8 @@
     <h2>Get In Touch</h2>
     <p>Have questions or want to collaborate? Reach out to us below.</p>
     <form class="contact-form">
-      <input type="text" placeholder="Your Name" required/>
-      <input type="email" placeholder="Your Email" required/>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
       <textarea rows="5" placeholder="Your Message"></textarea>
       <button type="submit" class="btn-glow">Send Message</button>
     </form>
@@ -177,7 +200,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <p>&copy; 2025 PROJECTGPT. All Rights Reserved.</p>
-    <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+    <button class="scroll-top-btn" onclick="scrollToTop()">â†‘</button>
   </footer>
 
   <!-- MODAL POPUP -->
@@ -193,7 +216,6 @@
     </div>
   </div>
 
-  <!-- SCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>
